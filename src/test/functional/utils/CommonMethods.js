@@ -22,6 +22,20 @@ class CommonMethods {
 
       return response.json();
   }
+
+  async makePutRequest(url, putBody) {
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': '0797c976ee133afe6e4f6eb124da3ca3'
+        },
+        body: JSON.stringify(putBody)
+    });
+
+    return response.json();
+}
+
 }
 
 module.exports = { CommonMethods };
