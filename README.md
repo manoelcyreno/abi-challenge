@@ -1,3 +1,5 @@
+![Master branch](https://github.com/manoelcyreno/abi-challenge/actions/workflows/main.yml/badge.svg)
+
 # Abi Challenge
 
 Automation project strategy for the Abi Challenge.
