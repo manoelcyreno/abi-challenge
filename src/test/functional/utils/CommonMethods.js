@@ -49,6 +49,18 @@ class CommonMethods {
         return response.json();
     }
 
+    async makeDeleteRequest(url) {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': '0797c976ee133afe6e4f6eb124da3ca3'
+            }
+        });
+
+        return response.text();
+    }
+
 }
 
 module.exports = { CommonMethods };
