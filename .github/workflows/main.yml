@@ -37,6 +37,4 @@ jobs:
         uses: dorny/test-reporter@v1
         if: always()
         with:
-          name: JEST Tests
-          path: reports/jest-*.xml
-          reporter: jest-junit
+          path: playwright-report/index.html

@@ -19,6 +19,7 @@ module.exports = defineConfig({
   reporter: [
     ['list'], 
     ['junit', {  outputFile: 'junitTestResult.xml' }],
+    ['html'],
     ['experimental-allure-playwright']
   ],
   globalSetup: './src/test/functional/utils/globalSetup.js',
