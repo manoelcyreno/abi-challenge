@@ -33,7 +33,7 @@ Automation project strategy for the Abi Challenge.
 
 ## How to Access the SonarQube report in a LOCAL way:
 - `npm run sonar:configure` -> To configure the SonarQube by docker
-- `npm run sonar:open` -> To run the tests and uplad the result to SonarQube
+- `npm run sonar:open` -> To run the tests and upload the result to SonarQube
 - Access: http://localhost:9000
 - login: admin
 - password: abi
