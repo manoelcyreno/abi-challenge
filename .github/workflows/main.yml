@@ -33,8 +33,9 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Test Report
-        uses: dorny/test-reporter@v1
+      - name: Archive test report
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          path: playwright-report/index.html
+          name: index
+          path: playwright-report/
