@@ -33,8 +33,10 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Create test summary
-        uses: test-summary/action@dist
-        with:
-          paths: results/**/*.tap
+      - name: Test Report
+        uses: dorny/test-reporter@v1
         if: always()
+        with:
+          name: JEST Tests
+          path: reports/jest-*.xml
+          reporter: jest-junit
