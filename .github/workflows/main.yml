@@ -1,0 +1,40 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies and setup environment
+        run: |
+          sudo apt-get update -qy
+          sudo apt install -qy default-jre
+          npm install
+          npx playwright install
+          npx playwright install-deps
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: junitTestResult.xml
+          retention-days: 2
