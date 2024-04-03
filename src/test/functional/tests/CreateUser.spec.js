@@ -12,6 +12,8 @@ test.describe('Test cases about: Create user', () => {
         const randomFirstName = await commonMethods.generateRandomString();
         const randomLastName = await commonMethods.generateRandomString();
         const randomUniqueId = await commonMethods.generateRandomString();
+        let email = await commonMethods.generateRandomString();
+        email = email + "@test.com";
 
         const postBody = {
             age: 35,
@@ -29,7 +31,8 @@ test.describe('Test cases about: Create user', () => {
             subscriptionEndDate: '2022-05-31',
             uniqueId: randomUniqueId,
             termsAt: true,
-            productName: 'Free trial'
+            productName: 'Free trial',
+            email: email
         };
 
         const response = await commonMethods.makePostRequest(apiUrl, postBody);
@@ -43,6 +46,8 @@ test.describe('Test cases about: Create user', () => {
         const randomFirstName = await commonMethods.generateRandomString();
         const randomLastName = await commonMethods.generateRandomString();
         const randomUniqueId = await commonMethods.generateRandomString();
+        let email = await commonMethods.generateRandomString();
+        email = email + "@test.com"
 
         const postBody = {
             age: 35,
@@ -60,7 +65,8 @@ test.describe('Test cases about: Create user', () => {
             subscriptionEndDate: '2022-05-31',
             uniqueId: randomUniqueId,
             termsAt: true,
-            productName: 'Free trial'
+            productName: 'Free trial',
+            email: email
         };
 
         const response1 = await commonMethods.makePostRequest(apiUrl, postBody);
@@ -69,7 +75,8 @@ test.describe('Test cases about: Create user', () => {
 
         const response2 = await commonMethods.makePostRequest(apiUrl, postBody);
 
-        expect(response2).toHaveProperty('statusCode', 400);
+        expect(response2).toHaveProperty('name', 'Conflict');
+        expect(response2).toHaveProperty('message', 'User already exists!');
 
     });
 

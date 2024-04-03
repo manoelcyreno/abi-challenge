@@ -15,6 +15,8 @@ test.describe('Test cases about: Unsubscribe user', () => {
         const randomFirstName = await commonMethods.generateRandomString();
         const randomLastName = await commonMethods.generateRandomString();
         const randomUniqueId = await commonMethods.generateRandomString();
+        let email = await commonMethods.generateRandomString();
+        email = email + "@test.com";
 
         body = {
             age: 35,
@@ -32,7 +34,8 @@ test.describe('Test cases about: Unsubscribe user', () => {
             subscriptionEndDate: '2022-05-31',
             uniqueId: randomUniqueId,
             termsAt: true,
-            productName: 'Free trial'
+            productName: 'Free trial',
+            email: email
         };
 
         const response = await commonMethods.makePostRequest(apiUrl, body);
