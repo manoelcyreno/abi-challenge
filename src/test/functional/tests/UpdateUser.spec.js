@@ -34,7 +34,7 @@ test.describe('Test cases about: Update user', () => {
             productName: 'Free trial'
         };
 
-        let response = await commonMethods.makePostRequest(apiUrl, body);
+        const response = await commonMethods.makePostRequest(apiUrl, body);
 
         expect(response).toHaveProperty('userStatus', 'processing');
 
