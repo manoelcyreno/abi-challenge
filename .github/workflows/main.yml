@@ -5,6 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule: 
+    - cron: '0 0 * * *'
 
 jobs:
   test:
@@ -31,10 +33,8 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Upload test artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Create test summary
+        uses: test-summary/action@dist
         with:
-          name: test-results
-          path: junitTestResult.xml
-          retention-days: 2
+          paths: results/**/*.tap
+        if: always()
