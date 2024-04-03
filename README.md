@@ -12,7 +12,7 @@ Automation project strategy for the Abi Challenge.
 ## Useful commands:
 - `npm install` -> Install all dependencies
 - `npm run test` -> Run all tests in headless mode
-- `npm run test:ui` -> Run tests by browser calling the Playwright UI mode
+- `npm run test <test_file_name>` -> Run all tests in headless mode, from a specific test file, example, `npm run test CreateUser.spec.js `
 - `npm run report:generate` -> To create the Allure Report
 - `npm run report:open` -> To open the Allure Report
 - `npm run sonar:configure` -> To configure the SonarQube by docker

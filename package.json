@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:ui": "npx playwright test --ui",
     "report:generate": "npx allure generate ./allure-results --clean",
     "report:open": "npx allure open ./allure-report",
     "sonar:configure": "./configureSonar.sh",
